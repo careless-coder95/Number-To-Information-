@@ -1,0 +1,18 @@
+services:
+  - type: worker
+    name: uid-info-bot
+    env: python
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: OWNER_NAME
+        sync: false
+      - key: MONGO_URI
+        sync: false
+      - key: PLAYWRIGHT_BROWSERS_PATH
+        value: /opt/render/project/src/browsers
+
