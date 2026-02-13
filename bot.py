@@ -292,7 +292,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = [
             [InlineKeyboardButton("📖 Help", callback_data="help"),
              InlineKeyboardButton("📊 Stats", callback_data="mystats")],
-            [InlineKeyboardButton("📜 History", callback_data="history")]
+            [InlineKeyboardButton("📜 History", callback_data="history")],
+            [InlineKeyboardButton("💬 Support Group", url="https://t.me/II_StarkxRich_II"),
+         InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
         ]
         await update.message.reply_text(panel("🔐 Premium Access", content), parse_mode="HTML", 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
