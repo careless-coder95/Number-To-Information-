@@ -815,11 +815,21 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     if not is_authorized(user.id):
-        content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
-        keyboard = [[InlineKeyboardButton("📩 Contact", url=f"tg://openmessage?user_id={OWNER_ID}")]]
-        await update.message.reply_text(panel("🚫 Access Denied", content), parse_mode="HTML",
-                                         reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
-        return
+    content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
+    
+    keyboard = [
+        [InlineKeyboardButton("📩 Contact Owner", url=f"tg://openmessage?user_id={OWNER_ID}")],
+        [InlineKeyboardButton("🛠 Support Group", url="https://t.me/II_StarkxRich_II"),
+         InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
+    ]
+
+    await update.message.reply_text(
+        panel("🚫 Access Denied", content),
+        parse_mode="HTML",
+        reply_markup=InlineKeyboardMarkup(keyboard),
+        disable_web_page_preview=True
+    )
+    return
     
     used = get_user_daily_lookups(user.id)
     limit = get_daily_limit(user.id)
