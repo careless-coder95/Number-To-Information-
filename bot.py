@@ -815,11 +815,10 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if is_banned(user.id):
         await update.message.reply_text(panel("🚫 Banned", "You are banned."), parse_mode="HTML")
         return
-    
     if not is_authorized(user.id):
-       content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
-    
-       keyboard = [
+        content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
+
+    keyboard = [
         [InlineKeyboardButton("📩 Contact Owner", url=f"tg://openmessage?user_id={OWNER_ID}")],
         [InlineKeyboardButton("🛠 Support Group", url="https://t.me/II_StarkxRich_II"),
          InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
