@@ -815,9 +815,9 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
     
     if not is_authorized(user.id):
-    content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
+       content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
     
-    keyboard = [
+       keyboard = [
         [InlineKeyboardButton("📩 Contact Owner", url=f"tg://openmessage?user_id={OWNER_ID}")],
         [InlineKeyboardButton("🛠 Support Group", url="https://t.me/II_StarkxRich_II"),
          InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
