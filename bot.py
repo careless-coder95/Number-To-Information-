@@ -290,11 +290,20 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 {get_owner_footer()}"""
         
         keyboard = [
-            [InlineKeyboardButton("📖 Help", callback_data="help"),
-             InlineKeyboardButton("📊 Stats", callback_data="mystats")],
-            [InlineKeyboardButton("📜 History", callback_data="history")],
-            [InlineKeyboardButton("💬 Support Group", url="https://t.me/II_StarkxRich_II"),
-         InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
+    [
+        InlineKeyboardButton("📖 ˹ʜєʟᴘ & ɢᴜɪᴅє˼", callback_data="help"),
+        InlineKeyboardButton("🖥️ ˹ʙσᴛ sᴛᴧᴛs˼", callback_data="mystats")
+    ],
+    [
+        InlineKeyboardButton("📜 ˹sєᴧʀᴄʜ ʜɪsᴛσʀʏ˼", callback_data="history")
+    ],
+    [
+        InlineKeyboardButton("💬 ˹sᴜᴘᴘσʀᴛ ɢʀσᴜᴘ˼", url="https://t.me/II_StarkxRich_II"),
+        InlineKeyboardButton("📢 ˹σғғɪᴄɪᴧʟ ᴄʜᴧηηєʟ˼", url="https://t.me/ll_CarelessxCoder_ll")
+    ],
+    [
+        InlineKeyboardButton("🚀 ˹ᴜᴘᴅᴧᴛє ᴄʜᴧηηєʟ˼", url="https://t.me/ROLEX_MODS_45")
+    ]
         ]
         await update.message.reply_text(panel("🔐 Premium Access", content), parse_mode="HTML", 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
@@ -304,10 +313,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 📩 Contact the owner for access.
 {get_owner_footer()}"""
         keyboard = [
-        [InlineKeyboardButton("📩 Contact Owner", url=f"tg://openmessage?user_id={OWNER_ID}")],
-        [InlineKeyboardButton("💬 Support Group", url="https://t.me/II_StarkxRich_II"),
-         InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
+    [
+        InlineKeyboardButton("👑 ˹ᴄσηᴛᴧᴄᴛ σᴡηєʀ˼", url=f"tg://openmessage?user_id={OWNER_ID}")
+    ],
+    [
+        InlineKeyboardButton("💬 ˹sᴜᴘᴘσʀᴛ ɢʀσᴜᴘ˼", url="https://t.me/II_StarkxRich_II")
+    ],
+    [
+        InlineKeyboardButton("📢 ˹σғғɪᴄɪᴧʟ ᴄʜᴧηηєʟ˼", url="https://t.me/ll_CarelessxCoder_ll"),
+        InlineKeyboardButton("🚀 ˹ᴜᴘᴅᴧᴛє ᴄʜᴧηηєʟ˼", url="https://t.me/ROLEX_MODS_45")
     ]
+        ]
         await update.message.reply_text(panel("🚫 Access Denied", content), parse_mode="HTML",
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
 
@@ -823,10 +839,17 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not is_authorized(user.id):
         content = f"⚠️ Not authorized!\n📩 Contact owner for access.{get_owner_footer()}"
         keyboard = [
-        [InlineKeyboardButton("📩 Contact Owner", url=f"tg://openmessage?user_id={OWNER_ID}")],
-        [InlineKeyboardButton("💬 Support Group", url="https://t.me/II_StarkxRich_II"),
-         InlineKeyboardButton("📢 Channel", url="https://t.me/ll_CarelessxCoder_ll")]
+    [
+        InlineKeyboardButton("👑 ˹ᴄσηᴛᴧᴄᴛ σᴡηєʀ˼", url=f"tg://openmessage?user_id={OWNER_ID}")
+    ],
+    [
+        InlineKeyboardButton("💬 ˹sᴜᴘᴘσʀᴛ ɢʀσᴜᴘ˼", url="https://t.me/II_StarkxRich_II")
+    ],
+    [
+        InlineKeyboardButton("📢 ˹σғғɪᴄɪᴧʟ ᴄʜᴧηηєʟ˼", url="https://t.me/ll_CarelessxCoder_ll"),
+        InlineKeyboardButton("🚀 ˹ᴜᴘᴅᴧᴛє ᴄʜᴧηηєʟ˼", url="https://t.me/ROLEX_MODS_45")
     ]
+        ]
 
         await update.message.reply_text(panel("🚫 Access Denied", content), parse_mode="HTML",
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True)
@@ -870,7 +893,7 @@ async def fetch_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
             keyboard = [
                 [InlineKeyboardButton("🔄 New Search", callback_data="new"),
-                 InlineKeyboardButton("📜 History", callback_data="history")]
+                 InlineKeyboardButton("📜 Search History", callback_data="history")]
             ]
             
             await loading_msg.edit_text(decorated, parse_mode="HTML", 
