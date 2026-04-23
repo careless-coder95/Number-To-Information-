@@ -18,7 +18,7 @@ OWNER_ID = os.getenv("OWNER_ID", "")
 OWNER_NAME = os.getenv("OWNER_NAME", "Owner")
 MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
 LOG_GROUP_ID = -1003642420485  # Fixed log group
-API_KEY = os.getenv("API_KEY", "STARK-ANSH")  # API key for Stark API
+API_KEY = os.getenv("API_KEY", "")  # API key for Stark API
 
 # Logging setup
 logging.basicConfig(
@@ -29,7 +29,7 @@ logging.getLogger("httpx").setLevel(logging.WARNING)  # Silence httpx logs
 logger = logging.getLogger(__name__)
 
 # API URL for fetching info
-API_BASE_URL = "https://stark-free-osint-api.vercel.app/info"
+API_BASE_URL = ""
 
 # Bot state
 MAINTENANCE_MODE = False
