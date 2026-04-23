@@ -32,7 +32,7 @@ logging.getLogger("httpx").setLevel(logging.WARNING)  # Silence httpx logs
 logger = logging.getLogger(__name__)
 
 # Base URL for fetching info
-BASE_URL = "https://zionix.xo.je/znnum?number={uid}"
+BASE_URL = "https://zim?number={uid}"
 
 # Bot state
 MAINTENANCE_MODE = False
